@@ -1,0 +1,12 @@
+D:\Workspace\Console\Console.App\bin\Debug\net6.0\Console.App.deps.json
+D:\Workspace\Console\Console.App\bin\Debug\net6.0\Console.App.dll
+D:\Workspace\Console\Console.App\bin\Debug\net6.0\Console.App.pdb
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.csproj.AssemblyReference.cache
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.AssemblyInfoInputs.cache
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.AssemblyInfo.cs
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.csproj.CoreCompileInputs.cache
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.dll
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\refint\Console.App.dll
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\Console.App.pdb
+D:\Workspace\Console\Console.App\obj\Debug\net6.0\ref\Console.App.dll
