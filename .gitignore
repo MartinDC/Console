@@ -1,6 +1,6 @@
 # Misc folders
-[Bb]in/
-[Oo]bj/
+[Bb]in/*
+[Oo]bj/*
 [Tt]emp/
 [Pp]ackages/
 /.artifacts/
