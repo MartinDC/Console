@@ -51,9 +51,8 @@ internal class Bussen {
         Driver = PromptDriver();
         RenderDriver(Driver);
 
-        while(true) {
-            TryAndLogGenericError(() => {
-                var menuChoise = RenderMenu();
+        while (true) {
+            TryRenderMenuActions((menuChoise) => {
                 switch (menuChoise) {
                     case 1: RenderDriver(Driver); break;
                     case 2: AddPassenger(); break;
@@ -63,7 +62,7 @@ internal class Bussen {
                     case 6: PokePassenger(); break;
                 }
             });
-        }
+        }    
     }
 
     private int RenderMenu() {
@@ -84,9 +83,8 @@ internal class Bussen {
         try {
             Passengers[Passengers.FindFirstEmptySeat()] = PromptPassenger();
             ConsolePrompt.GetRenderer().DrawText("[green] Your passenger is now seated in the bus! [/]");
-        } catch(Exception e) {
+        } catch(Exception) {
             ConsolePrompt.GetRenderer().DrawText("[red] You need to enter proper values. Try again [/]");
-            ConsolePrompt.GetRenderer().DrawText(e.Message);
         }
     }
 
@@ -140,12 +138,18 @@ internal class Bussen {
         return Driver.PromptDriver();
     }
 
-    private void TryAndLogGenericError(Action action) {
+    private void TryRenderMenuActions(Action<int> action) {
         try {
             if (action is null) { 
                 throw new ArgumentNullException("You have to pass an action to TryAndLogGenericError"); 
             }
-            action.Invoke();
+
+            var menuChoise = RenderMenu();
+            ConsolePrompt.Clear();
+
+            action.Invoke(menuChoise);
+            ConsolePrompt.GetPrompt().DrawPromptOptions("Back to menu?", new() { "yes", "no" });
+            ConsolePrompt.Clear();
         } catch(Exception) {
             ConsolePrompt.GetRenderer().DrawText("[red]Something went wrong- Try again but do it right this time! [/]");
         }
